@@ -1,0 +1,15 @@
+#! /bin/sh
+#
+# Wrapper around configure to build libgmp as an Intel SGX trusted enclave
+# library.
+#
+
+export CFLAGS=-fno-asynchronous-unwind-tables
+
+./configure --prefix=/opt/gmp/6.1.2 \
+	--enable-assembly \
+	--disable-shared \
+	--enable-static \
+	--with-pic \
+	--enable-sgx 
+
