@@ -179,7 +179,7 @@ AC_DEFUN([_SGX_TSTDC_BUILD_FLAGS_SET],[
 		dnl link. Remember, we are just trying to ensure the symbol
 		dnl is found, not produce a usable object.
 		LDFLAGS="${ac_cv_sgx_enclave_ldflags} -fno-builtin -Wl,--defsym,__ImageBase=0 -Wl,--defsym,_start=0 -Wl,--defsym,g_ecall_table=0 -Wl,--defsym,g_dyn_entry_table=0"
-		LIBS="-Wl,--no-undefined -Wl,--start-group -lsgx_tstdc -lsgx_trts -lsgx_tcrypto -Wl,--end-group"
+		LIBS="-Wl,--no-undefined -Wl,--start-group -lsgx_tstdc -lsgx_trts -lsgx_tcrypto -l${SGX_TSERVICE_LIB} -Wl,--end-group"
 		old_echo_n="${as_echo_n}"
 		as_echo_n='echo -n Intel SGX: '
 ])

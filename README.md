@@ -30,7 +30,7 @@ This project was built and tested with the following configuration:
 
  * Ubuntu\* Linux\* 16.04, 18.04
  * CentOS\* Linux 7.4
- * [Intel SGX SDK v2.3.1](https://github.com/intel/linux-sgx)
+ * [Intel SGX SDK v2.5](https://github.com/intel/linux-sgx)
 
 Other Intel SGX capable operating systems may work, but have not been tested.
 
