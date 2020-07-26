@@ -471,7 +471,9 @@ typedef __mpq_struct *mpq_ptr;
 
 #if defined (__cplusplus)
 extern "C" {
+#ifndef GMP_WITH_SGX
 using std::FILE;
+#endif
 #endif
 
 #define mp_set_memory_functions __gmp_set_memory_functions
@@ -2279,7 +2281,7 @@ mpn_neg (mp_ptr __gmp_rp, mp_srcptr __gmp_up, mp_size_t __gmp_n)
 
 /**************** C++ routines ****************/
 
-#ifdef __cplusplus
+#if defined(__cplusplus) && !defined(GMP_WITH_SGX)
 __GMP_DECLSPEC_XX std::ostream& operator<< (std::ostream &, mpz_srcptr);
 __GMP_DECLSPEC_XX std::ostream& operator<< (std::ostream &, mpq_srcptr);
 __GMP_DECLSPEC_XX std::ostream& operator<< (std::ostream &, mpf_srcptr);
